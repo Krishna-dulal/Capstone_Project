@@ -1,13 +1,12 @@
-<!-- templates/registration/login.html -->
-{% extends "base.html" %}
-
-{% block title %}Login{% endblock %}
-
+<-- users/templates/users/login.html -->
+{% load socialaccount %}
 {% block content %}
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-</form>
-{% endblock %}
+    ...
+    <button class="btn btn-outline-info">
+        <a href="{% provider_login_url 'google'%}?next=/">
+            <i class="fab fa-google"></i>
+            Login with Google
+        </a>
+    </button>
+    ...
+{% endblock content %}
